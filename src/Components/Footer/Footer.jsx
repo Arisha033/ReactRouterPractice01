@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -22,14 +22,28 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="/" className="hover:underline">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `hover:text-orange-700 ${
+                        isActive ? 'text-orange-700' : 'text-gray-700'
+                      }`
+                    }
+                  >
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `hover:text-orange-700 ${
+                        isActive ? 'text-orange-700' : 'text-gray-700'
+                      }`
+                    }
+                  >
                     About
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -39,14 +53,22 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/hiteshchoudhary"
+                  <NavLink
+                    target="_blank"
+                    to="https://github.com/Arisha033"
+                    className={({ isActive }) => `hover:text-orange-700
+                  ${isActive ? 'text-orange-700' : 'text-gray-700'}`}
+                  >
+                    Github
+                  </NavLink>
+                  {/* <a
+                    href="https://github.com/Arisha033"
                     className="hover:underline"
                     target="_blank"
                     rel="noreferrer"
                   >
                     Github
-                  </a>
+                  </a> */}
                 </li>
                 <li>
                   <Link to="/" className="hover:underline">
@@ -164,5 +186,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
